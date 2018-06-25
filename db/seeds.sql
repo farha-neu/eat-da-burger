@@ -6,3 +6,5 @@ INSERT INTO burgers (burger_name, devoured) VALUES
 
 SELECT * FROM burgers;
 
+INSERT INTO burgers (burger_name, devoured) VALUES 
+("Dave's Single",true);

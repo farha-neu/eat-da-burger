@@ -1,0 +1,36 @@
+<h1>Eat-Da-Burger</h1>
+
+<span>Enter the burger you want to eat and click on "order now" button</span>
+{{!-- form for ordering new burger --}}
+<form class="create-form">
+   <input type="text" id="burger-input" name="burgerName">
+   <button type="submit">Order now!</button>
+</form>
+
+{{!-- populate all burger names here from database with buttons to devour--}}
+<h2>Ordered Burgers</h2>
+<ul>
+    {{#each burgers}}
+      {{#unless devoured}} 
+       <li>
+           {{id}}. {{burger_name}}
+            {{> burgers/burger-block devoured=1}}
+        </li>
+       {{/unless}}
+    {{/each}}
+</ul>
+{{!-- populate all burger names here from database with buttons to reorder--}}
+<h2>Devoured Burgers</h2>
+<ul>
+    {{#each burgers}}
+      {{#if devoured}}
+       <li>
+           {{id}}. {{burger_name}}
+              {{> burgers/burger-block devoured=0}}
+              <button class="delete-burger" data-id="{{id}}">Digest It!</button>
+        </li>
+       {{/if}}
+    {{/each}}
+</ul>
+
+
