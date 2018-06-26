@@ -1,5 +1,5 @@
 body{
-    background-image: url("/assets/img/textbg.jpg");
+    background-image: url("/assets/img/textbg.png");
     font-family: 'Rye', cursive !important;
     font-size:22px !important;
     background-repeat: repeat;
@@ -7,7 +7,7 @@ body{
 
 .container{
     margin-top:15px;
-    background:rgba(245, 245, 220);
+    background:rgba(245, 245, 220,0.9);
     border-radius:50px 0px;
     border:10px solid darkslategray;
 }
