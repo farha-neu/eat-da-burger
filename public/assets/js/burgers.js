@@ -8,29 +8,23 @@ $(function() {
       devour: newDevour
     };
     
-
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
       data: newDevourState
     }).then(
       function() {
-        console.log("changed devour to", newDevour);
-       
-        location.reload();  
-        
+        console.log("changed devour to", newDevour);   
+        location.reload();       
       }
     );   
   });
 
   $(".create-form").on("submit", function(event) {
-    // Make sure to preventDefault on a submit event.
     event.preventDefault();
-
     var newBurger = {
       burgerName: $("#burger-input").val().trim()
     };
-    
     // Send the POST request.
     if(newBurger.burgerName!==""){ 
       postBurger(newBurger);
@@ -40,7 +34,6 @@ $(function() {
 
   $(".delete-burger").on("click", function(event) {
     var id = $(this).data("id");
-
     // Send the DELETE request.
     $.ajax("/api/burgers/" + id, {
       type: "DELETE"
