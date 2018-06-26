@@ -15,8 +15,8 @@
     <form class="create-form text-center">
         <div class="form-group">
             <div class="col-md-6 offset-md-3">
-                <textarea class="form-control text-center" id="burger-input" rows="2" 
-                placeholder="Type the burger you want to order & click on Order Now!" name="burgerName"></textarea>
+                <textarea class="form-control text-center" id="burger-input" rows="3" 
+                placeholder="Type the burger you want to order & click on Order Now!...." name="burgerName"></textarea>
             </div>
         </div>
         <div class="order-btn">
@@ -34,10 +34,11 @@
                                         {{id}}
                                     </div>
                                     <div class="col-sm-7 text-center text-md-left name-div" id="b-name">
-                                        {{burger_name}}
+                                        <img src="/assets/img/hamburger.png" class="burger-icon"> {{burger_name}}
                                     </div>
                                     <div class="col-sm-3 text-center text-md-left">
-                                        <button type="submit" class="btn btn-success center-block change-state" data-id="{{id}}" data-devour=1>Devour</button>
+                                        <button type="submit" class="btn btn-warning center-block change-state" id="devour-btn" data-id="{{id}}" data-devour=1>
+                                           Devour!</button>
                                     </div>
                                 </div>               
                             </div>
@@ -59,7 +60,7 @@
                         </div>
                         <div class="col-md-4 col-sm-12 text-center text-md-left">
                             <button type="submit" class="btn btn-success center-block reorder" data-id="{{id}}" data-name="{{burger_name}}" data-devour=0>Reorder</button>
-                            <button type="submit" class="btn btn-warning center-block delete-burger" data-id="{{id}}"><i class="fas fa-times"></i></button>
+                            <button type="submit" class="btn btn-danger center-block delete-burger" data-id="{{id}}"><i class="fas fa-times"></i></button>
                         </div>
                     </div>
                 </div>

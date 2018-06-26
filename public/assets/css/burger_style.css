@@ -1,5 +1,5 @@
 body{
-    background-image: url("/assets/img/bg11.jpg");
+    background-image: url("/assets/img/textbg.jpg");
     font-family: 'Rye', cursive !important;
     font-size:22px !important;
     background-repeat: repeat;
@@ -7,7 +7,7 @@ body{
 
 .container{
     margin-top:15px;
-    background:rgba(240,248,255,0.9);
+    background:rgba(245, 245, 220);
     border-radius:50px 0px;
     border:10px solid darkslategray;
 }
@@ -21,6 +21,20 @@ body{
 .icon{
     
     margin-top:-20px;
+}
+.burger-icon{
+    height:30px;
+}
+
+#devour-btn{
+    animation: example 1s;
+    animation-iteration-count: infinite;
+    background: #ffc107;
+}
+
+@keyframes example {
+    0%   {background: #ffc107;}
+    50%  {background: orange;}
 }
 
 .burger-pic{
