@@ -1,4 +1,5 @@
 $(function() {
+  
   $(".change-state").on("click", function(event) {
     var id = $(this).data("id");
     var newDevour = $(this).data("devour");
@@ -6,8 +7,7 @@ $(function() {
     var newDevourState = {
       devour: newDevour
     };
-    console.log("clicked");
-    console.log(newDevourState);
+    
 
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
@@ -16,10 +16,11 @@ $(function() {
     }).then(
       function() {
         console.log("changed devour to", newDevour);
-        // Reload the page to get the updated list
-        location.reload();
+       
+        location.reload();  
+        
       }
-    );
+    );   
   });
 
   $(".create-form").on("submit", function(event) {
@@ -29,12 +30,14 @@ $(function() {
     var newBurger = {
       burgerName: $("#burger-input").val().trim()
     };
-
-    console.log(newBurger);
+    
     // Send the POST request.
-    postBurger(newBurger);
-  
+    if(newBurger.burgerName!==""){ 
+      postBurger(newBurger);
+    }
   });
+
+
   $(".delete-burger").on("click", function(event) {
     var id = $(this).data("id");
 
@@ -45,23 +48,22 @@ $(function() {
       function() {
         console.log("deleted burger", id);
         // Reload the page to get the updated list
-        location.reload();
+          location.reload();  
       }
     );
   });
-  $(".reorder").on("click", function(event) {
-   
-    var newBurger = {
-      burgerName: $("#burger-name").text().trim()
-    };
 
-    console.log(newBurger);
+  $(".reorder").on("click", function(event) {
+    var newBurger = {
+      burgerName: $(this).attr("data-name")
+    };
     postBurger(newBurger);
   });
-
 });
 
+
 function postBurger(newBurger){
+  console.log("executed");
   $.ajax("/api/burgers", {
     type: "POST",
     data: newBurger
@@ -70,7 +72,9 @@ function postBurger(newBurger){
       console.log("created new burger");
       $("#burger-input").val("");
       // Reload the page to get the updated list
-      location.reload();
+      location.reload();     
     }
   );
 }
+
+

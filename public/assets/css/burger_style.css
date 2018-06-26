@@ -45,7 +45,9 @@ body{
     margin-bottom:20px;
 }
 
-
+.order-button:hover{
+    opacity: 0.6;
+}
 
 .burger-div{
     background-color: darkslategray;
@@ -55,6 +57,10 @@ body{
     color: white;
     font-family: 'Bree Serif', serif;
     border:2px ridge orange;
+}
+
+#devoured-burger{
+    background-color: rgba(49,79,79,0.7);
 }
 
 .name-div{

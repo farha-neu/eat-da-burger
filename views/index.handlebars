@@ -33,7 +33,7 @@
                                     <div class="col-sm-2 text-center text-md-left id-div">
                                         {{id}}
                                     </div>
-                                    <div class="col-sm-7 text-center text-md-left name-div">
+                                    <div class="col-sm-7 text-center text-md-left name-div" id="b-name">
                                         {{burger_name}}
                                     </div>
                                     <div class="col-sm-3 text-center text-md-left">
@@ -44,22 +44,23 @@
                         {{/unless}}
                     {{/each}}
           </div>
+
           <div class="col-lg-6 col-md-12 burgers">
             <h2 class="text-center">Devoured Burgers</h2>
             {{#each burgers}}
                 {{#if devoured}} 
-                <div class="burger-div">
+                <div class="burger-div" id="devoured-burger">
                     <div class="row">
-                    <div class="col-md-2 col-sm-2 text-center text-md-left id-div">
-                        {{id}}
-                    </div>
-                    <div class="col-md-5 col-sm-10 text-center text-md-left name-div" id="burger-name">
-                        {{burger_name}}
-                    </div>
-                    <div class="col-md-5 col-sm-12 text-center text-md-left">
-                        <button type="submit" class="btn btn-success center-block reorder" data-id="{{id}}" data-devour=0>Reorder</button>
-                        <button type="submit" class="btn btn-warning center-block delete-burger" data-id="{{id}}">Enough!</button>
-                    </div>
+                        <div class="col-md-2 col-sm-2 text-center text-md-left id-div">
+                            {{id}}
+                        </div>
+                        <div class="col-md-6 col-sm-10 text-center text-md-left name-div">
+                            {{burger_name}}
+                        </div>
+                        <div class="col-md-4 col-sm-12 text-center text-md-left">
+                            <button type="submit" class="btn btn-success center-block reorder" data-id="{{id}}" data-name="{{burger_name}}" data-devour=0>Reorder</button>
+                            <button type="submit" class="btn btn-warning center-block delete-burger" data-id="{{id}}"><i class="fas fa-times"></i></button>
+                        </div>
                     </div>
                 </div>
                 {{/if}}
@@ -69,3 +70,4 @@
      </div>
    </div>
 </div>
+ 
