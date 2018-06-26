@@ -32,16 +32,8 @@ $(function() {
 
     console.log(newBurger);
     // Send the POST request.
-    $.ajax("/api/burgers", {
-      type: "POST",
-      data: newBurger
-    }).then(
-      function() {
-        console.log("created new burger");
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
+    postBurger(newBurger);
+  
   });
   $(".delete-burger").on("click", function(event) {
     var id = $(this).data("id");
@@ -57,5 +49,28 @@ $(function() {
       }
     );
   });
+  $(".reorder").on("click", function(event) {
+   
+    var newBurger = {
+      burgerName: $("#burger-name").text().trim()
+    };
+
+    console.log(newBurger);
+    postBurger(newBurger);
+  });
 
 });
+
+function postBurger(newBurger){
+  $.ajax("/api/burgers", {
+    type: "POST",
+    data: newBurger
+  }).then(
+    function() {
+      console.log("created new burger");
+      $("#burger-input").val("");
+      // Reload the page to get the updated list
+      location.reload();
+    }
+  );
+}

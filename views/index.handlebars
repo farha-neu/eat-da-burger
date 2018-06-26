@@ -1,36 +1,71 @@
-<h1>Eat-Da-Burger</h1>
+<div class="container">
+    <div class="wrapper">
+     <div class="row">
+         <div class="col-md-12 text-center header">
+             <h1><img src="/assets/img/eat.png" class="icon">Eat~Da~BURGER<img src="/assets/img/eat.png" class="icon"></h1>
+         </div>       
+     </div>
+      <div class="row">
+         <div class="col-md-6 offset-md-3 text-center">
+             <img src="/assets/img/burger1.png" class="img-fluid burger-pic">
+         </div>       
+      </div>
+      
+    
+    <form class="create-form text-center">
+        <div class="form-group">
+            <div class="col-md-6 offset-md-3">
+                <textarea class="form-control text-center" id="burger-input" rows="2" 
+                placeholder="Type the burger you want to order & click on Order Now!" name="burgerName"></textarea>
+            </div>
+        </div>
+        <div class="order-btn">
+          <button type="submit" class="btn btn-secondary order-button btn-lg center-block">Order Now!</button>
+        </div>
+    </form>      
+     <div class="row">
+         <div class="col-lg-6 col-md-12 burgers">
+            <h2 class="text-center">Ordered Burgers</h2>
+                    {{#each burgers}}
+                        {{#unless devoured}} 
+                            <div class="burger-div">
+                                <div class="row">
+                                    <div class="col-sm-2 text-center text-md-left id-div">
+                                        {{id}}
+                                    </div>
+                                    <div class="col-sm-7 text-center text-md-left name-div">
+                                        {{burger_name}}
+                                    </div>
+                                    <div class="col-sm-3 text-center text-md-left">
+                                        <button type="submit" class="btn btn-success center-block change-state" data-id="{{id}}" data-devour=1>Devour</button>
+                                    </div>
+                                </div>               
+                            </div>
+                        {{/unless}}
+                    {{/each}}
+          </div>
+          <div class="col-lg-6 col-md-12 burgers">
+            <h2 class="text-center">Devoured Burgers</h2>
+            {{#each burgers}}
+                {{#if devoured}} 
+                <div class="burger-div">
+                    <div class="row">
+                    <div class="col-md-2 col-sm-2 text-center text-md-left id-div">
+                        {{id}}
+                    </div>
+                    <div class="col-md-5 col-sm-10 text-center text-md-left name-div" id="burger-name">
+                        {{burger_name}}
+                    </div>
+                    <div class="col-md-5 col-sm-12 text-center text-md-left">
+                        <button type="submit" class="btn btn-success center-block reorder" data-id="{{id}}" data-devour=0>Reorder</button>
+                        <button type="submit" class="btn btn-warning center-block delete-burger" data-id="{{id}}">Enough!</button>
+                    </div>
+                    </div>
+                </div>
+                {{/if}}
+            {{/each}}
+         </div>
 
-<span>Enter the burger you want to eat and click on "order now" button</span>
-{{!-- form for ordering new burger --}}
-<form class="create-form">
-   <input type="text" id="burger-input" name="burgerName">
-   <button type="submit">Order now!</button>
-</form>
-
-{{!-- populate all burger names here from database with buttons to devour--}}
-<h2>Ordered Burgers</h2>
-<ul>
-    {{#each burgers}}
-      {{#unless devoured}} 
-       <li>
-           {{id}}. {{burger_name}}
-            {{> burgers/burger-block devoured=1}}
-        </li>
-       {{/unless}}
-    {{/each}}
-</ul>
-{{!-- populate all burger names here from database with buttons to reorder--}}
-<h2>Devoured Burgers</h2>
-<ul>
-    {{#each burgers}}
-      {{#if devoured}}
-       <li>
-           {{id}}. {{burger_name}}
-              {{> burgers/burger-block devoured=0}}
-              <button class="delete-burger" data-id="{{id}}">Digest It!</button>
-        </li>
-       {{/if}}
-    {{/each}}
-</ul>
-
-
+     </div>
+   </div>
+</div>

@@ -1,0 +1,67 @@
+body{
+    background-image: url("/assets/img/bg11.jpg");
+    font-family: 'Rye', cursive !important;
+    font-size:22px !important;
+    background-repeat: repeat;
+}
+
+.container{
+    margin-top:15px;
+    background:rgba(240,248,255,0.9);
+    border-radius:50px 0px;
+    border:10px solid darkslategray;
+}
+.wrapper{
+    padding:20px;
+}
+.header{
+    -webkit-text-stroke: 1px darkgoldenrod;
+}
+
+.icon{
+    
+    margin-top:-20px;
+}
+
+.burger-pic{
+   width:250px;
+}
+
+#burger-input{
+    margin-top:10px;
+}
+
+.form-control{
+    background-image: url("/assets/img/bg.png");
+    border:2px groove brown !important;
+    font-size:22px !important;
+    color: darkslategray !important;
+}
+
+.order-button{
+    background: black !important;
+    border:2px solid orange !important;
+    border-radius: 20px 0px !important;
+    margin-bottom:20px;
+}
+
+
+
+.burger-div{
+    background-color: darkslategray;
+    margin:5px;
+    padding: 10px;
+    border-radius:20px;
+    color: white;
+    font-family: 'Bree Serif', serif;
+    border:2px ridge orange;
+}
+
+.name-div{
+    word-wrap: break-word;
+}
+
+.id-div{
+   border-right:2px ridge orange;
+   color: orange;
+}
