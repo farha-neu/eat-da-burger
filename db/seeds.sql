@@ -1,8 +1,6 @@
-INSERT INTO burgers (burger_name, devoured) VALUES 
-("Double Stack",false),
-("Hamburger",false),
-("Cheese Burger",false),
-("Single Stack",false);
+INSERT INTO burgers (burger_name,username) VALUES 
+("Double Stack","Farha"),
+("Hamburger","Alex"),
+("Cheese Burger","Ashley");
 
 SELECT * FROM burgers;
-

@@ -26,6 +26,10 @@ body{
     height:30px;
 }
 
+.icon-order{
+    height:15px;
+}
+
 #devour-btn{
     animation: example 1s;
     animation-iteration-count: infinite;
@@ -41,9 +45,10 @@ body{
    width:250px;
 }
 
-#burger-input{
+.text-box{
     margin-top:10px;
 }
+
 
 .form-control{
     background-image: url("/assets/img/bg.png");
@@ -62,7 +67,9 @@ body{
 .order-button:hover{
     opacity: 0.6;
 }
-
+.customer{
+    height:15px;
+}
 .burger-div{
     background-color: darkslategray;
     margin:5px;
@@ -71,6 +78,7 @@ body{
     color: white;
     font-family: 'Bree Serif', serif;
     border:2px ridge orange;
+    font-size:20px !important;
 }
 
 #devoured-burger{
@@ -84,4 +92,16 @@ body{
 .id-div{
    border-right:2px ridge orange;
    color: orange;
+}
+
+.form-control::placeholder {
+    color: gray !important;
+    opacity: 1;
+    font-size:16px;
+}
+
+.small{
+    font-size:15px !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:orange;
 }

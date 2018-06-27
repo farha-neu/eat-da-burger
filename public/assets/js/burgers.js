@@ -23,7 +23,8 @@ $(function() {
   $(".create-form").on("submit", function(event) {
     event.preventDefault();
     var newBurger = {
-      burgerName: $("#burger-input").val().trim()
+      burgerName: $("#burger-input").val().trim(),
+      userName:$("#username-input").val().trim()
     };
     // Send the POST request.
     if(newBurger.burgerName!==""){ 
@@ -46,13 +47,21 @@ $(function() {
     );
   });
 
-  $(".reorder").on("click", function(event) {
-    var newBurger = {
-      burgerName: $(this).attr("data-name")
-    };
-    postBurger(newBurger);
-  });
-});
+
+$(".second-input").hide();
+$("#order-btn").hide();
+
+$("#username-btn").on("click",function(event){
+  event.preventDefault();
+  var username = $("#username-input").val().trim();
+  if(username!==""){
+    $(".first-input").hide();
+    $(".second-input").show();
+    $("#username-btn").hide();
+    $("#order-btn").show();
+  } 
+})
+}); //end of doc ready
 
 
 function postBurger(newBurger){
@@ -64,10 +73,13 @@ function postBurger(newBurger){
     function() {
       console.log("created new burger");
       $("#burger-input").val("");
+      $("#username-input").val("");
       // Reload the page to get the updated list
       location.reload();     
     }
   );
 }
+
+
 
 

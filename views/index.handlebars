@@ -13,14 +13,23 @@
       
     
     <form class="create-form text-center">
-        <div class="form-group">
-            <div class="col-md-6 offset-md-3">
-                <textarea class="form-control text-center" id="burger-input" rows="3" 
-                placeholder="Type the burger you want to order & click on Order Now!...." name="burgerName"></textarea>
+         <div class="form-group">
+            <div class="col-md-6 offset-md-3 col-sm-12">
+                <div class="first-input">
+                    <label for="username" class="text-box" header>Hey!! Want to Order a Burger??</label>
+                    <input class="form-control text-center" id="username-input"  
+                    placeholder="Type your name & click on Next" name="username"></input>
+                 </div>
+                 <div class="second-input">
+                    <label for="burger" class="text-box">Which Burger Are You Hungry for?</label>
+                    <textarea class="form-control text-center" id="burger-input" rows="3" 
+                    placeholder="Type the burger you want to order & click on Order Now!...." name="burgerName"></textarea>
+                 </div>
             </div>
         </div>
         <div class="order-btn">
-          <button type="submit" class="btn btn-secondary order-button btn-lg center-block">Order Now!</button>
+          <button class="btn btn-secondary order-button btn-lg center-block" id="username-btn">Next <i class="fas fa-chevron-right"></i></button>
+          <button type="submit" class="btn btn-secondary order-button btn-lg center-block" id="order-btn">Order Now!</button>
         </div>
     </form>      
      <div class="row">
@@ -34,7 +43,8 @@
                                         {{id}}
                                     </div>
                                     <div class="col-sm-7 text-center text-md-left name-div" id="b-name">
-                                        <img src="/assets/img/hamburger.png" class="burger-icon"> {{burger_name}}
+                                        <img src="/assets/img/hamburger.png" class="burger-icon"> {{burger_name}} 
+                                        <span class="small">[{{username}}]</span>
                                     </div>
                                     <div class="col-sm-3 text-center text-md-left">
                                         <button type="submit" class="btn btn-warning center-block change-state" id="devour-btn" data-id="{{id}}" data-devour=1>
@@ -52,14 +62,13 @@
                 {{#if devoured}} 
                 <div class="burger-div" id="devoured-burger">
                     <div class="row">
-                        <div class="col-md-2 col-sm-2 text-center text-md-left id-div">
+                        <div class="col-sm-2 text-center text-md-left id-div">
                             {{id}}
                         </div>
-                        <div class="col-md-6 col-sm-10 text-center text-md-left name-div">
+                        <div class="col-sm-8 text-center text-md-left name-div">
                             {{burger_name}}
                         </div>
-                        <div class="col-md-4 col-sm-12 text-center text-md-left">
-                            <button type="submit" class="btn btn-success center-block reorder" data-id="{{id}}" data-name="{{burger_name}}" data-devour=0>Reorder</button>
+                        <div class="col-sm-2 text-center text-md-left">
                             <button type="submit" class="btn btn-danger center-block delete-burger" data-id="{{id}}"><i class="fas fa-times"></i></button>
                         </div>
                     </div>

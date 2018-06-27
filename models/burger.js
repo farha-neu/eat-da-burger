@@ -6,8 +6,8 @@ var burger = {
             cb(res);
         })
     },
-    insertOne : function(col,value,cb){
-        orm.insertOne("burgers",col,value,function(res){
+    insertOne : function(cols,values,cb){
+        orm.insertOne("burgers",cols,values,function(res){
             cb(res);
         })
     },
